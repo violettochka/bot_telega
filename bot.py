@@ -32,7 +32,7 @@ def start(update, context):
     """Send a message when the command /start is issued."""
     kb = [[InlineKeyboardButton('Кафедра КМАД', callback_data = 'kafedra')],
           [InlineKeyboardButton('Можливості для студентів', callback_data = 'mozhlivosti')],
-          [InlineKeyboardButton('Умови вступу', callback_data = 'umovy')]]
+          [InlineKeyboardButton('Умови вступу', callback_data = 'umovy')],]
     reply = InlineKeyboardMarkup(kb)
     update.message.reply_text('Hi! You can choose', reply_markup = reply )
     
@@ -53,16 +53,24 @@ def error(update, context):
 
 def kafedra(update, context):
     """Send a message when the command /start is issued."""
-    kb = [[InlineKeyboardButton('Викладачі', callback_data = '')],
-    [InlineKeyboardButton('Відмінності кафедри', callback_data = '')],
-    [InlineKeyboardButton('Історія кафедри', callback_data = '')],
-    [InlineKeyboardButton('Аудиторії кафедри', callback_data = '')],
-    [InlineKeyboardButton('Наші випускники', callback_data = '')]]
+    kb = [[InlineKeyboardButton('Викладачі', callback_data = 'vykladachi')],
+          [InlineKeyboardButton('Принципи навчання на кафедрі', callback_data = 'printsipy')],
+          [InlineKeyboardButton('Історія кафедри ', callback_data = 'istoria')],]
     reply = InlineKeyboardMarkup(kb)
     update.callback_query.message.reply_text('З чого почнемо?', reply_markup = reply )
 def mozhlivosti(update, context):
     pass
 def umovy(update, context):
+    pass
+def vikladachi(update, context)
+    pass
+def vidmini_kafedri(update, context)
+    pass
+def istoriya(update, context)
+    pass
+def auditorii(update, context)
+    pass
+def vipusniki(update, context)
     pass
 def main():
 
@@ -75,7 +83,16 @@ def main():
     dp.add_handler(CallbackQueryHandler(kafedra, pattern = 'kafedra'))
     dp.add_handler(CallbackQueryHandler(mozhlivosti, pattern = 'mozhlivosti'))
     dp.add_handler(CallbackQueryHandler(umovy, pattern = 'umovy'))
-
+    dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
+    dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
+    dp.add_handler(CallbackQueryHandler(pracevlasht, pattern = 'pracevlasht'))
+    dp.add_handler(CallbackQueryHandler(practica, pattern = 'practica'))
+    dp.add_handler(CallbackQueryHandler(vikladachi, pattern = 'vikladachi'))
+    dp.add_handler(CallbackQueryHandler(vidmini_kafedri, pattern = 'vidmini_kafedri'))
+    dp.add_handler(CallbackQueryHandler(istoriya, pattern = 'istoriya'))
+    dp.add_handler(CallbackQueryHandler(auditorii, pattern = 'auditorii'))
+    dp.add_handler(CallbackQueryHandler(vipusniki, pattern = 'vipusniki'))
+    
     # log all errors
     dp.add_error_handler(error)
 
