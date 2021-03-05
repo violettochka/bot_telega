@@ -62,6 +62,16 @@ def mozhlivosti(update, context):
     pass
 def umovy(update, context):
     pass
+def vikladachi(update, context)
+	 pass
+def vidmini_kafedri(update, context)
+	 pass
+def istoriya(update, context)
+	 pass
+def auditorii(update, context)
+	 pass
+def vipusniki(update, context)
+	 pass
 def main():
 
     updater = Updater("1600092846:AAHLA--iPlmFI8LMfp-U7PEL2NtmrGqUJJQ", use_context=True)
