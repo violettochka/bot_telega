@@ -8,7 +8,7 @@ Simple Bot to reply to Telegram messages.
 First, a few handler functions are defined. Then, those functions are passed to
 the Dispatcher and registered at their respective places.
 Then, the bot is started and runs until we press Ctrl-C on the command line.
-#------------------------
+
 Usage:
 Basic Echobot example, repeats messages.
 Press Ctrl-C on the command line or send a signal to the process to stop the
@@ -32,7 +32,7 @@ def start(update, context):
     """Send a message when the command /start is issued."""
     kb = [[InlineKeyboardButton('Кафедра КМАД', callback_data = 'kafedra')],
           [InlineKeyboardButton('Можливості для студентів', callback_data = 'mozhlivosti')],
-          [InlineKeyboardButton('Умови вступу', callback_data = 'umovy')]]
+          [InlineKeyboardButton('Умови вступу', callback_data = 'umovy')],]
     reply = InlineKeyboardMarkup(kb)
     update.message.reply_text('Hi! You can choose', reply_markup = reply )
     
@@ -53,25 +53,27 @@ def error(update, context):
 
 def kafedra(update, context):
     """Send a message when the command /start is issued."""
-    kb = [[InlineKeyboardButton('Викладачі', callback_data = '')],
-    [InlineKeyboardButton('Відмінності кафедри', callback_data = '')],
-    [InlineKeyboardButton('Історія кафедри', callback_data = '')],
-    [InlineKeyboardButton('Аудиторії кафедри', callback_data = '')],
-    [InlineKeyboardButton('Наші випускники', callback_data = '')]]
+    kb = [[InlineKeyboardButton('Викладачі', callback_data = 'vykladachi')],
+          [InlineKeyboardButton('Принципи навчання на кафедрі', callback_data = 'printsipy')],
+          [InlineKeyboardButton('Історія кафедри ', callback_data = 'istoria')],]
     reply = InlineKeyboardMarkup(kb)
     update.callback_query.message.reply_text('З чого почнемо?', reply_markup = reply )
 def mozhlivosti(update, context):
     pass
 def umovy(update, context):
-    kb = [[InlineKeyboardButton('Конкурсні предмети ЗНО',callback_data = '')],
-          [InlineKeyboardButton('Розрахунок конкурсного балу',callback_data = '')],
-          [InlineKeyboardButton('Етапи вступної компанії',callback_data = '')],
-          [InlineKeyboardButton('Корисні посилання',callback_data = '')],
-          [InlineKeyboardButton('Кількість бюджетних та контрактних мість для вступників',callback_data = '')],]
-    reply = InlineKeyboardMarkup(kb)
-    update.callback_query.message.reply_text('Hi! you can choose', reply_markup = reply )
+    pass
+def vikladachi(update, context)
+    pass
+def vidmini_kafedri(update, context)
+    pass
+def istoriya(update, context)
+    pass
+def auditorii(update, context)
+    pass
+def vipusniki(update, context)
+    pass
 def main():
-
+  
     updater = Updater("1600092846:AAHLA--iPlmFI8LMfp-U7PEL2NtmrGqUJJQ", use_context=True)
     dp = updater.dispatcher
 
@@ -81,7 +83,16 @@ def main():
     dp.add_handler(CallbackQueryHandler(kafedra, pattern = 'kafedra'))
     dp.add_handler(CallbackQueryHandler(mozhlivosti, pattern = 'mozhlivosti'))
     dp.add_handler(CallbackQueryHandler(umovy, pattern = 'umovy'))
-
+    dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
+    dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
+    dp.add_handler(CallbackQueryHandler(pracevlasht, pattern = 'pracevlasht'))
+    dp.add_handler(CallbackQueryHandler(practica, pattern = 'practica'))
+    dp.add_handler(CallbackQueryHandler(vikladachi, pattern = 'vikladachi'))
+    dp.add_handler(CallbackQueryHandler(vidmini_kafedri, pattern = 'vidmini_kafedri'))
+    dp.add_handler(CallbackQueryHandler(istoriya, pattern = 'istoriya'))
+    dp.add_handler(CallbackQueryHandler(auditorii, pattern = 'auditorii'))
+    dp.add_handler(CallbackQueryHandler(vipusniki, pattern = 'vipusniki'))
+    
     # log all errors
     dp.add_error_handler(error)
 
