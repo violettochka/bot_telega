@@ -55,8 +55,8 @@ def kafedra(update, context):
     """Send a message when the command /start is issued."""
     kb = [[InlineKeyboardButton('Викладачі', callback_data = '')],
     [InlineKeyboardButton('Відмінності кафедри', callback_data = '')],
-    [InlineKeyboardButton('Історія кафедри', callback_data = '')]
-    [InlineKeyboardButton('Аудиторії кафедри', callback_data = '')]
+    [InlineKeyboardButton('Історія кафедри', callback_data = '')],
+    [InlineKeyboardButton('Аудиторії кафедри', callback_data = '')],
     [InlineKeyboardButton('Наші випускники', callback_data = '')]]
     reply = InlineKeyboardMarkup(kb)
     update.callback_query.message.reply_text('З чого почнемо?', reply_markup = reply )
