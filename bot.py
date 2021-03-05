@@ -86,15 +86,23 @@ def main():
     dp.add_handler(CallbackQueryHandler(kafedra, pattern = 'kafedra'))
     dp.add_handler(CallbackQueryHandler(mozhlivosti, pattern = 'mozhlivosti'))
     dp.add_handler(CallbackQueryHandler(umovy, pattern = 'umovy'))
+    
     dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
     dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
     dp.add_handler(CallbackQueryHandler(pracevlasht, pattern = 'pracevlasht'))
     dp.add_handler(CallbackQueryHandler(practica, pattern = 'practica'))
+    
     dp.add_handler(CallbackQueryHandler(vikladachi, pattern = 'vikladachi'))
     dp.add_handler(CallbackQueryHandler(vidmini_kafedri, pattern = 'vidmini_kafedri'))
     dp.add_handler(CallbackQueryHandler(istoriya, pattern = 'istoriya'))
     dp.add_handler(CallbackQueryHandler(auditorii, pattern = 'auditorii'))
     dp.add_handler(CallbackQueryHandler(vipusniki, pattern = 'vipusniki'))
+    
+    dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
+    dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
+    dp.add_handler(CallbackQueryHandler(pracevlasht, pattern = 'pracevlasht'))
+    dp.add_handler(CallbackQueryHandler(practica, pattern = 'practica'))
+
     
     # log all errors
     dp.add_error_handler(error)
