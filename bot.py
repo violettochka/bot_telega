@@ -73,7 +73,11 @@ def main():
     dp.add_handler(CallbackQueryHandler(kafedra, pattern = 'kafedra'))
     dp.add_handler(CallbackQueryHandler(mozhlivosti, pattern = 'mozhlivosti'))
     dp.add_handler(CallbackQueryHandler(umovy, pattern = 'umovy'))
-
+    dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
+    dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
+    dp.add_handler(CallbackQueryHandler(pracevlasht, pattern = 'pracevlasht'))
+    dp.add_handler(CallbackQueryHandler(practica, pattern = 'practica'))
+    
     # log all errors
     dp.add_error_handler(error)
 
