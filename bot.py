@@ -29,7 +29,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-sddfsdf
+
 def read_content_from_url(file):
     f = urllib.request.urlopen(file)
     text = f.read().decode(encoding = 'utf-8')
@@ -159,7 +159,7 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
-
+4564564564
 
 if __name__ == '__main__':
     main()
