@@ -78,15 +78,28 @@ def umovy(update, context):
           [InlineKeyboardButton('Кількість бюджетних та контрактних мість для вступників',callback_data = '')],]
     reply = InlineKeyboardMarkup(kb)
     update.callback_query.message.reply_text('Hi! you can choose', reply_markup = reply )
-def vikladachi(update, context)
+    
+def mozhlivosti(update, context):
+	  pass
+def pridmeti_dlya_zno(update, context):
+	  pass
+def rozrahunok_konkursnogo_balu(update, context):
+	  pass
+def etapi_vstupnoi_kompanii(update, context):
+	  pass
+def korisni_posilanya(update, context):
+	  pass
+def mistcya_dlya_vstupnikiv(update, context):
+	  pass    
+def vikladachi(update, context):
     pass
-def vidmini_kafedri(update, context)
+def vidmini_kafedri(update, context):
     pass
-def istoriya(update, context)
+def istoriya(update, context):
     pass
-def auditorii(update, context)
+def auditorii(update, context):
     pass
-def vipusniki(update, context)
+def vipusniki(update, context):
     pass
 def main():
   
@@ -100,11 +113,11 @@ def main():
     dp.add_handler(CallbackQueryHandler(mozhlivosti, pattern = 'mozhlivosti'))
     dp.add_handler(CallbackQueryHandler(umovy, pattern = 'umovy'))
     dp.add_handler(CallbackQueryHandler(mozhlivosti , pattern = 'mozhlivosti'))
-    dp.add_handler(CallbackQueryHandler(pridmeti_dlya_zno, pattern = 'pridmeti dlya zno'))
-    dp.add_handler(CallbackQueryHandler(rozrahunok_konkursnogo_balu , pattern = 'rozrahunok konkursnogo balu'))
-    dp.add_handler(CallbackQueryHandler( etapi_vstupnoi_kompanii, pattern = 'etapi vstupnoi kompanii'))
-    dp.add_handler(CallbackQueryHandler(korisni_posilanya , pattern = 'korisni posilanya'))
-    dp.add_handler(CallbackQueryHandler(mistcya_dlya_vstupnikiv , pattern = 'mistcya dlya vstupnikiv'))
+    dp.add_handler(CallbackQueryHandler(pridmeti_dlya_zno, pattern = 'pridmeti_dlya_zno'))
+    dp.add_handler(CallbackQueryHandler(rozrahunok_konkursnogo_balu , pattern = 'rozrahunok_konkursnogo_balu'))
+    dp.add_handler(CallbackQueryHandler( etapi_vstupnoi_kompanii, pattern = 'etapi_vstupnoi_kompanii'))
+    dp.add_handler(CallbackQueryHandler(korisni_posilanya , pattern = 'korisni_posilanya'))
+    dp.add_handler(CallbackQueryHandler(mistcya_dlya_vstupnikiv , pattern = 'mistcya_dlya_vstupnikiv'))
     
     dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
     dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
