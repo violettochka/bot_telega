@@ -99,6 +99,13 @@ def main():
     dp.add_handler(CallbackQueryHandler(kafedra, pattern = 'kafedra'))
     dp.add_handler(CallbackQueryHandler(mozhlivosti, pattern = 'mozhlivosti'))
     dp.add_handler(CallbackQueryHandler(umovy, pattern = 'umovy'))
+    dp.add_handler(CallbackQueryHandler(umovy , pattern = 'umovy'))
+    dp.add_handler(CallbackQueryHandler(mozhlivosti , pattern = 'mozhlivosti'))
+    dp.add_handler(CallbackQueryHandler(pridmeti dlya zno, pattern = 'pridmeti dlya zno'))
+    dp.add_handler(CallbackQueryHandler(rozrahunok konkursnogo balu , pattern = 'rozrahunok konkursnogo balu'))
+    dp.add_handler(CallbackQueryHandler( etapi vstupnoi kompanii, pattern = 'etapi vstupnoi kompanii'))
+    dp.add_handler(CallbackQueryHandler(korisni posilanya , pattern = 'korisni posilanya'))
+    dp.add_handler(CallbackQueryHandler(mistcya dlya vstupnikiv , pattern = 'mistcya dlya vstupnikiv'))
     
     dp.add_handler(CallbackQueryHandler(proektne, pattern = 'proektne'))
     dp.add_handler(CallbackQueryHandler(dualna, pattern = 'dualna'))
