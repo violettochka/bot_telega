@@ -29,7 +29,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-
+sddfsdf
 def read_content_from_url(file):
     f = urllib.request.urlopen(file)
     text = f.read().decode(encoding = 'utf-8')
