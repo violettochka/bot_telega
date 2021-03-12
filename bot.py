@@ -21,6 +21,8 @@ bot.
 import logging
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CallbackQueryHandler, CommandHandler, MessageHandler, Filters
+import urllib.request
+link = 'https://ulkabo.github.io/bot-friday/data/'
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -28,9 +30,18 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+def read_content_from_url(file):
+    f = urllib.request.urlopen(file)
+    text = f.read().decode(encoding = 'utf-8')
+    f.close()
+    return text
 
-# Define a few command handlers. These usually take the two arguments update and
-# context. Error handlers also receive the raised TelegramError object in error.
+def read_content_from_file(file):
+    f = open(file, 'r')
+    text = f.read()
+    f.close()
+    return text
+
 def start(update, context):
     """Send a message when the command /start is issued."""
     kb = [[InlineKeyboardButton('Кафедра КМАД', callback_data = 'kafedra')],
@@ -92,7 +103,9 @@ def korisni_posilanya(update, context):
 def mistcya_dlya_vstupnikiv(update, context):
 	  pass    
 def vikladachi(update, context):
-    pass
+    link_file = link + 'vikladachi.txt'
+    content = read_content_from_file(link_file)
+    update.callback_query.message.reply_text(content, reply_markup = reply )
 def vidmini_kafedri(update, context):
     pass
 def istoriya(update, context):
