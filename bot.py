@@ -61,8 +61,15 @@ def kafedra(update, context):
           [InlineKeyboardButton('Історія кафедри ', callback_data = 'istoria')],]
     reply = InlineKeyboardMarkup(kb)
     update.callback_query.message.reply_text('З чого почнемо?', reply_markup = reply )
+    
 def mozhlivosti(update, context):
-    pass
+    kb = [[InlineKeyboardButton("Проектне навчання", callback_data = 'proektne')],
+          [InlineKeyboardButton("Дуальне навчання", callback_data = 'dualna')],
+          [InlineKeyboardButton("Працевлаштування",callback_data = 'pracevlasht')],
+          [InlineKeyboardButton("Практика",callback_data = 'praktica')]]
+    reply = InlineKeyboardMarkup(kb)
+    update.message.reply_text("У нас є багато цікавих можливостей для студентів:", reply_markup=reply)
+    
 def umovy(update, context):
     kb = [[InlineKeyboardButton('Конкурсні предмети ЗНО',callback_data = '')],
           [InlineKeyboardButton('Розрахунок конкурсного балу',callback_data = '')],
